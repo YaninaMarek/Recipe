@@ -1,7 +1,60 @@
 .App {
   text-align: center;
 }
-
+body{
+  scrollbar-color: #886956;
+}
+video{
+  object-fit: cover;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  opacity: 0.7;
+}
+h1{
+  color:#442b24;
+}
+button{
+  background-color: #886956;
+  color:#fbe2ce;
+  border-radius: 10px;
+  padding: 5px 30px 5px 30px;
+  border: none;
+}
+.recipe{
+ display: flex;
+ justify-content: space-evenly;
+ flex-wrap: wrap;
+ align-items: flex-start;
+ height: 300px;
+ 
+}
+.box{
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+li{
+  list-style-type: none;
+  text-align: center;
+  padding: 5px;
+}
+input{
+  width:400px;
+  padding: 6px 30px 5px 30px;
+  border-radius: 10px;
+  background-color:#fbe2ce;
+  
+  border: none;
+}
+.kcal{
+  background-color: #886956;
+  color:#fbe2ce;
+  border-radius: 10px;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
