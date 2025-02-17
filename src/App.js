@@ -10,7 +10,7 @@ function App() {
   const MY_KEY="969587d6727e47357a413188a829b58c";
   const [mySearch,setMySearch] = useState("");
   const [myRecipe,setMyRecipe] = useState([]);
-  const [wordSumbitted,setWordSumbitted] = useState('salmon');
+  const [wordSumbitted,setWordSumbitted] = useState('melon');
  
   useEffect(()=>{
         const getRecipe=async ()=>{
