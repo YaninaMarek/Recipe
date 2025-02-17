@@ -1,30 +1,33 @@
 import { useEffect,useState} from 'react';
-import video from './video.mp4'
+import video from './video.mp4';
 import './App.css';
 import MyComponent from './MyComponent';
+
+
 
 function App() {
   const MY_ID="18b7d80d";
   const MY_KEY="969587d6727e47357a413188a829b58c";
   const [mySearch,setMySearch] = useState("");
   const [myRecipe,setMyRecipe] = useState([]);
-  const [wordSumbitted,setWordSumbitted] = useState('steak');
-
+  const [wordSumbitted,setWordSumbitted] = useState('salmon');
+ 
   useEffect(()=>{
-    const getRecipe=async ()=>{
-      const response = await fetch ('https://api.edamam.com/api/recipes/v2?type=public&q=steak&app_id=18b7d80d&app_key=969587d6727e47357a413188a829b58c');
-      const data = await response.json();
-      setMyRecipe(data.hits);
-    }
-    getRecipe()
-  },[wordSumbitted])
-
-  const myRecipeSearch = (e) =>{
-    setMySearch(e.target.value);
-  }
-  const finalSearch = (e) =>{
-    e.preventDefault();
-  }
+        const getRecipe=async ()=>{
+          const response = await fetch (`https://api.edamam.com/api/recipes/v2?type=public&q=${wordSumbitted}&app_id=${MY_ID}&app_key=${MY_KEY}`);
+          const data = await response.json();
+          setMyRecipe(data.hits);
+        }
+        getRecipe()
+      },[wordSumbitted])
+    
+      const myRecipeSearch = (e) =>{
+        setMySearch(e.target.value)
+      }
+      const finalSearch = (e) =>{
+        e.preventDefault()
+        setWordSumbitted(mySearch)
+      }
   return (
     <div className='App'>
       <div className='container'>
